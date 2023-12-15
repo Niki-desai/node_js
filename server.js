@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
-const serverless = require('serverless-http');
+// const serverless = require('serverless-http');
 
 
 dotenv.config();
@@ -118,4 +118,4 @@ app.listen(PORT, () => {
 
 // app.use('/.netlify/functions/api', router)
 module.exports = app;
-module.exports.handler = serverless(app);
+// module.exports.handler = serverless(app);
