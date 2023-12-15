@@ -98,6 +98,19 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.get('/users', async (req, res) => {
+    try {
+        // Retrieve the list of users (excluding the password field)
+        const userList = await User.find({}, { _id: 0, password: 0 });
+
+        // Send the list of users in the response
+        res.json({ users: userList });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
