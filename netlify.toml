@@ -1,2 +1,4 @@
 [build]
-    functions = "functions"       
+ functions = "functions"  
+command = "npm install && npm run build"
+publish = "."             
